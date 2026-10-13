@@ -8,33 +8,95 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 24px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
       background: #f4f6fb;
       color: #222;
     }
     h1 { color: #244477; }
     .demo {
       background: white;
-      padding: 24px;
+      padding: 20px;
+      margin-bottom: 20px;
       border-radius: 12px;
+      overflow-x: auto;
     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    audio { width: 180px; max-width: 100%; }
   </style>
 </head>
 <body>
   <h1>Speech Reconstruction</h1>
-  <p>SpeechTokenizer audio demonstrations</p>
+  <p>Compare the original speech with reconstructed speech.</p>
 
   <div class="demo">
-    <h2>Audio Samples</h2>
-    <p>We will add the original audio samples here next.</p>
-    <p>
-      See the
-      <a href="https://github.com/0nutation/SpeechTokenizer.github.io">
-        original SpeechTokenizer project
-      </a>.
-    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Tokenizer</th>
+          <th>Raw Audio</th>
+          <th>RVQ-1</th>
+          <th>RVQ-2:8</th>
+          <th>RVQ-1:8</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>EnCodec — Sample 1</th>
+          <td><audio controls preload="none" src="reconstruction/e/1/raw.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/e/1/rvq_1.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/e/1/rvq_2_8.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/e/1/rvq_8.wav"></audio></td>
+        </tr>
+        <tr>
+          <th>SpeechTokenizer — Sample 1</th>
+          <td><audio controls preload="none" src="reconstruction/s/1/raw.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/s/1/rvq_1.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/s/1/rvq_2_8.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/s/1/rvq_8.wav"></audio></td>
+        </tr>
+        <tr>
+          <th>EnCodec — Sample 2</th>
+          <td><audio controls preload="none" src="reconstruction/e/2/raw.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/e/2/rvq_1.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/e/2/rvq_2_8.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/e/2/rvq_8.wav"></audio></td>
+        </tr>
+        <tr>
+          <th>SpeechTokenizer — Sample 2</th>
+          <td><audio controls preload="none" src="reconstruction/s/2/raw.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/s/2/rvq_1.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/s/2/rvq_2_8.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/s/2/rvq_8.wav"></audio></td>
+        </tr>
+        <tr>
+          <th>EnCodec — Sample 3</th>
+          <td><audio controls preload="none" src="reconstruction/e/3/raw.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/e/3/rvq_1.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/e/3/rvq_2_8.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/e/3/rvq_8.wav"></audio></td>
+        </tr>
+        <tr>
+          <th>SpeechTokenizer — Sample 3</th>
+          <td><audio controls preload="none" src="reconstruction/s/3/raw.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/s/3/rvq_1.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/s/3/rvq_2_8.wav"></audio></td>
+          <td><audio controls preload="none" src="reconstruction/s/3/rvq_8.wav"></audio></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+
+  <p><a href="index.html">Back to the main SpeechTokenizer page</a></p>
 </body>
 </html>
+
