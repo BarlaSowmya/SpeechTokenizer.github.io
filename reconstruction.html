@@ -4,98 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Speech Reconstruction Demo</title>
+  <title>Speech Reconstruction</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #f4f6fb;
-      color: #222;
-    }
-    h1 { color: #244477; }
-    .demo {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      overflow-x: auto;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: center;
-    }
-    audio { width: 180px; max-width: 100%; }
+    html, body { margin: 0; padding: 0; }
+    iframe { width: 100%; border: 0; display: block; }
   </style>
 </head>
 <body>
-  <h1>Speech Reconstruction</h1>
-  <p>Compare the original speech with reconstructed speech.</p>
+  <iframe id="demo" src="index.html" title="Speech Reconstruction Demo"></iframe>
 
-  <div class="demo">
-    <table>
-      <thead>
-        <tr>
-          <th>Tokenizer</th>
-          <th>Raw Audio</th>
-          <th>RVQ-1</th>
-          <th>RVQ-2:8</th>
-          <th>RVQ-1:8</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>EnCodec — Sample 1</th>
-          <td><audio controls preload="none" src="reconstruction/e/1/raw.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/e/1/rvq_1.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/e/1/rvq_2_8.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/e/1/rvq_8.wav"></audio></td>
-        </tr>
-        <tr>
-          <th>SpeechTokenizer — Sample 1</th>
-          <td><audio controls preload="none" src="reconstruction/s/1/raw.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/s/1/rvq_1.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/s/1/rvq_2_8.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/s/1/rvq_8.wav"></audio></td>
-        </tr>
-        <tr>
-          <th>EnCodec — Sample 2</th>
-          <td><audio controls preload="none" src="reconstruction/e/2/raw.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/e/2/rvq_1.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/e/2/rvq_2_8.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/e/2/rvq_8.wav"></audio></td>
-        </tr>
-        <tr>
-          <th>SpeechTokenizer — Sample 2</th>
-          <td><audio controls preload="none" src="reconstruction/s/2/raw.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/s/2/rvq_1.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/s/2/rvq_2_8.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/s/2/rvq_8.wav"></audio></td>
-        </tr>
-        <tr>
-          <th>EnCodec — Sample 3</th>
-          <td><audio controls preload="none" src="reconstruction/e/3/raw.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/e/3/rvq_1.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/e/3/rvq_2_8.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/e/3/rvq_8.wav"></audio></td>
-        </tr>
-        <tr>
-          <th>SpeechTokenizer — Sample 3</th>
-          <td><audio controls preload="none" src="reconstruction/s/3/raw.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/s/3/rvq_1.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/s/3/rvq_2_8.wav"></audio></td>
-          <td><audio controls preload="none" src="reconstruction/s/3/rvq_8.wav"></audio></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <script>
+    const frame = document.getElementById("demo");
 
-  <p><a href="index.html">Back to the main SpeechTokenizer page</a></p>
+    frame.onload = function () {
+      const doc = frame.contentDocument;
+      const sections = doc.querySelectorAll(
+        "main article > .container.pt-5.mt-5.shadow.p-5.mb-5.bg-white.rounded"
+      );
+
+      sections.forEach(function (section) {
+        const heading = section.querySelector("h3");
+        if (!heading ||
+            heading.textContent.trim() !== "Speech Reconstruction:") {
+          section.style.display = "none";
+        }
+      });
+
+      frame.style.height = (doc.body.scrollHeight + 30) + "px";
+    };
+  </script>
 </body>
 </html>
