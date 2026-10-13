@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+
+	<title>SpeechTokenizer - Zero-shot Text-to-Speech</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+
+
+<div class="container" >
+<header role="banner">
+</header>
+<main role="main">
+<article itemscope itemtype="https://schema.org/BlogPosting">
+
+<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
+    <h3>Zero-shot Text-to-Speech:</h3>
+		<div class="table-responsive pt-3">
+			<table class="table table-hover pt-2">
+			<thead>
+			<tr>
+            <th style="text-align: center">Text</th>
+			<th style="text-align: center">Speaker Prompt</th>
+            <th style="text-align: center">GroundTruth</th>
+            <th style="text-align: center">Vall-E</th>
+            <th style="text-align: center">USLM</th>
+	    <th style="text-align: center">USLM(soundstorm)</th>
+			</tr>
+			</thead>
+			<tbody>
+            <td style="text-align: center;vertical-align:middle;width: 800px">She also defended the lord chancellors existing powers.</td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/1/prompt.flac" autoplay/>Your browser does not support the audio element.</audio></td>
+			<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/1/groundtruth.flac" autoplay/>Your browser does not support the audio element.</audio></td>
+			<td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/1/encodec.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/1/speechtokenizer.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/1/soundstorm.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+
+            </tr>
+			
+            <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px">I can confirm that miss deacon has received a threatening phone call.</td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/2/prompt.flac" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/2/groundtruth.flac" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/2/encodec.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/2/speechtokenizer.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/2/soundstorm.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    </tr>
+			
+            <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px">Ms.Anderson yesterday put a brave face on the departure.</td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/3/prompt.flac" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/3/groundtruth.flac" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/3/encodec.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/3/speechtokenizer.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/3/soundstorm.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    </tr>
+
+            <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px">To the hebrews it was a token that there would be no more universal floods.</td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/4/prompt.flac" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/4/groundtruth.flac" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/4/encodec.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/4/speechtokenizer.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/4/soundstorm.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    </tr>
+
+            <tr>
+            <td style="text-align: center;vertical-align:middle;width: 800px">The greeks used to imagine that it was a sign from the gods to foretell war or heavy rain.</td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/5/prompt.flac" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/5/groundtruth.flac" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/5/encodec.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/5/speechtokenizer.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td style="text-align: center;vertical-align:middle;width: 800px"><audio controls="controls" style="width: 140px;"><source src="zs_tts/5/soundstorm.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+	    </tr>
+
+            </tbody>
+            </table>
+        </div>
+</div>
+
+</article>
+</main>
+</div>
+</body>
+</html>
